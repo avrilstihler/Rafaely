@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrando Rafaely Stihler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis --- */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-red: #D32F2F;
+            --vintage-bg: #fdfbf7; /* Cor de papel antigo/creme */
+            --music-bg: #f4f4f4;   /* Cinza moderno */
+            --style-bg-start: #ffffff;
+            --style-bg-end: #fff0f0; /* Vermelho muito suave */
+            --dark-bg: #222222;
+            
+            --font-body: 'Montserrat', sans-serif;
+            --font-title: 'Playfair Display', serif;
+            --font-accent: 'Dancing Script', cursive;
+        }
+
+        /* --- Reset --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        /* --- Utilitários --- */
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+        .text-red { color: var(--accent-red); }
+        .accent-script {
+            font-family: var(--font-accent);
+            color: var(--accent-red);
+            font-size: 1.3em;
+            font-weight: normal;
+        }
+        
+        /* Ícone de Coruja */
+        .owl-icon {
+            width: 40px;
+            height: auto;
+            fill: var(--accent-red);
+            display: block;
+            margin: 0 auto 20px auto; /* Centralizado */
+        }
+        .owl-icon.white { fill: white; }
+        .owl-divider {
+            text-align: center;
+            margin: 40px 0;
+            opacity: 0.3;
+        }
+        .owl-divider svg { width: 30px; }
+
+        /* Imagens Placeholder */
+        .img-placeholder {
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-style: italic;
+            border: 2px solid var(--accent-red);
+            position: relative;
+        }
+
+        /* --- Header --- */
+        header {
+            min-height: 90vh; /* Alterado para min-height para evitar bugs em telas pequenas */
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            position: relative;
+            padding: 60px 0;
+            /* Padrão geométrico sutil no header */
+            background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .hero-content {
+            display: flex;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+        .hero-text p { font-size: 1.2rem; font-weight: 300; }
+        
+        .hero-image {
+  
+    background-image: url('https://i.postimg.cc/43F3ptZB/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-47-17-42df17db.jpg');
+            flex: 1;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 15px 15px 0px var(--accent-red); /* Sombra sólida vermelha */
+        }
+
+        /* --- Seções de Conteúdo (Estilos Únicos) --- */
+        .content-block {
+            padding: 80px 0;
+        }
+
+        /* 1. Estilo Música (Cinza Moderno) */
+        .style-music {
+            background-color: var(--music-bg);
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* 2. Estilo Vintage (Creme/Papel) */
+        .style-vintage {
+            background-color: var(--vintage-bg);
+            border-bottom: 1px solid #e0dacd;
+        }
+        
+        /* 3. Estilo Visual (Degradê Suave) */
+        .style-visual {
+            background: linear-gradient(to bottom, var(--style-bg-start), var(--style-bg-end));
+        }
+
+        .split-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        /* Inverte a ordem visual (imagem/texto) nos blocos pares */
+        .style-vintage .split-layout { flex-direction: row-reverse; }
+
+        .split-text { flex: 1; }
+        .split-text h2 { font-size: 2.5rem; margin-bottom: 25px; }
+        .split-text p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
+        
+        .split-image {
+            flex: 1;
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Placeholders específicos */
+        .img-1 { background-image: url('https://i.postimg.cc/k5h5W890/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-47-17-f9fa672f.jpg'); }
+        .img-2 { background-image: url('https://i.postimg.cc/HLPLb5HF/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-47-17-ebb6d345.jpg'); }
+        .img-3 { background-image: url('https://i.postimg.cc/N00Mybhs/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-54-19-b67e5e7a.jpg'); }
+
+        /* --- Citação --- */
+        .quote-section {
+            background-color: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h2v2H1V1zm4 0h2v2H5V1zm4 0h2v2H9V1z' fill='%23333333' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .quote-box blockquote {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .quote-box cite {
+            display: block;
+            margin-top: 30px;
+            font-family: var(--font-accent);
+            font-size: 1.5rem;
+            color: var(--accent-red);
+        }
+
+        /* --- Galeria de Fotos (Agora vem antes) --- */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 3rem; margin-bottom: 10px; }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .photo-item {
+            position: relative;
+            padding-top: 100%; /* Quadrado */
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .photo-item:hover { transform: scale(1.02); }
+        .photo-item img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- Mural de Recadinhos (Guestbook) --- */
+        .guestbook-section {
+            background-color: var(--music-bg); /* Fundo cinza suave */
+            padding: 80px 0 120px 0;
+            /* Padrão de linhas diagonais sutis */
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px);
+        }
+        
+        .post-it-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .post-it {
+            padding: 25px;
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+            font-family: var(--font-body);
+            transition: transform 0.3s;
+        }
+        
+        /* Cores Post-it */
+        .bg-amarelo { background-color: #fff9c4; color: #333; }
+        .bg-rosa    { background-color: #ffcdd2; color: #5c0000; }
+        .bg-cinza   { background-color: #e0e0e0; color: #333; }
+        .bg-azul    { background-color: #bbdefb; color: #0d47a1; }
+        .bg-verde   { background-color: #c8e6c9; color: #1b5e20; }
+
+        /* Rotação natural */
+        .post-it:nth-child(odd) { transform: rotate(2deg); }
+        .post-it:nth-child(even) { transform: rotate(-2deg); }
+        .post-it:hover { transform: scale(1.05) rotate(0deg) !important; z-index: 10; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+
+        .post-it-msg { font-size: 1rem; flex-grow: 1; overflow-y: auto; margin-bottom: 10px; white-space: pre-wrap; font-weight: 500; }
+        .post-it-meta { font-size: 0.8rem; text-align: right; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 8px; }
+        .post-it-author { font-weight: 700; display: block; text-transform: uppercase; font-size: 0.75rem; }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            margin-top: auto; /* Garante que o footer fique no fundo */
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-content, .split-layout, .style-vintage .split-layout {
+                flex-direction: column; text-align: center; gap: 30px;
+            }
+            .hero-text { padding-right: 0; }
+            .hero-image, .split-image { width: 100%; height: 300px; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .quote-box blockquote { font-size: 1.4rem; padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <svg style="display: none;">
+        <symbol id="owl-svg" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            <circle cx="9" cy="10" r="1.5"/><circle cx="15" cy="10" r="1.5"/>
+        </symbol>
+    </svg>
+
+    <header>
+        <div class="hero-content">
+            <div class="hero-text">
+                <svg class="owl-icon"><use xlink:href="#owl-svg"></use></svg>
+                <h1>Celebrando <span class="text-red">Rafaely Stihler</span></h1>
+                <p>A coruja sábia, a nossa Rita Lee.</p>
+            </div>
+            <div class="hero-image img-placeholder"></div>
+        </div>
+    </header>
+
+    <section class="content-block style-music">
+        <div class="container split-layout">
+            <div class="split-text">
+                <h2>Alma <span class="accent-script">Musical</span> & Livre</h2>
+                <p>Para apresentar a Rafaely, preciso começar pela música. Ela não apenas ouve; ela sente. Ela navega sem preconceitos pelas ondas sonoras.</p>
+                <p>De Bob Dylan às mais desconhecidas que ninguém ouve, sério é cada música, algumas são uns achados. Ela carrega essa vibe Rita Lee: autêntica, meio rebelde, e com uma cabeça maravilhosamente <span class="text-red">maluquinha</span>.</p>
+            </div>
+            <div class="split-image img-placeholder img-1"></div>
+        </div>
+    </section>
+
+    <section class="content-block style-vintage">
+        <div class="container split-layout">
+            <div class="split-text">
+                <div class="owl-divider"><svg class="owl-icon"><use xlink:href="#owl-svg"></use></svg></div>
+                <h2>A Coruja & O <span class="text-red">Antigo</span></h2>
+                <p>Talvez seja por isso que ela ama tanto as corujas: ela é uma. Observadora, inteligente e com um mundo interior vasto.</p>
+                <p>Rafaely escreve — e escreve muito bem. Ela ama o charme das coisas antigas, decorações que contam histórias, o cheiro de livros velhos e a vida silenciosa das plantas que ela cuida.</p>
+            </div>
+            <div class="split-image img-placeholder img-2"></div>
+        </div>
+    </section>
+
+    <section class="content-block style-visual">
+        <div class="container split-layout">
+            <div class="split-text">
+                <h2>Cinéfila de <span class="accent-script">Cabelo de Fogo</span></h2>
+                <p>Amante do cinema, ela assiste de tudo. E essa liberdade se reflete no espelho. Ela não segue tendências, ela cria a dela.</p>
+                <p>Lembra quando ela teve cabelo vermelho? O visual muda, as roupas não são convencionais, mas a essência é sempre a mesma.</p>
+            </div>
+            <div class="split-image img-placeholder img-3"></div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container quote-box">
+            <svg class="owl-icon white"><use xlink:href="#owl-svg"></use></svg>
+            <blockquote>
+                "She ain't got no money<br>
+                Her clothes are kinda funny<br>
+                Her hair is kinda wild and free<br>
+                Oh, but love grows where my Rosemary goes<br>
+                And nobody knows like me."
+            </blockquote>
+            <cite>— Para minha Rafaely.</cite>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Retratos de <span class="text-red">Rafaely</span></h2>
+            </div>
+            <div class="photo-grid" id="photoGallery"></div>
+        </div>
+    </section>
+
+    <section class="guestbook-section">
+        <div class="container">
+            <div class="section-header">
+                <svg class="owl-icon"><use xlink:href="#owl-svg"></use></svg>
+                <h2>Com Amor, Para Rafaely</h2>
+                <p>Bilhetes deixados com carinho.</p>
+            </div>
+            <div id="postItBoard" class="post-it-grid"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Feito com <span class="text-red">❤</span> para Rafaely Stihler.</p>
+    </footer>
+
+    <script>
+        // ==========================================
+        // CONFIGURAÇÃO DE CONTEÚDO
+        // ==========================================
+
+        // --- 1. MENSAGENS (Mural) ---
+        // Cores disponíveis: 'amarelo', 'rosa', 'cinza', 'azul', 'verde'
+        const mensagens = [
+            {
+                nome: "Avril",
+                msg: "Te amo muito! Você é uma pessoa incrível e merece todo o amor do mundo.",
+                data: "2025",
+                cor: "verde"
+            },
+        
+            {
+                nome: "Caio",
+                msg: "Eu te amo, você é um sol que ilumina os meus dias. Obrigado por ser quem você é.",
+                data: "2025",
+                cor: "rosa"
+            },
+            // Adicione mais mensagens copiando o bloco acima
+        ];
+
+        // --- 2. FOTOS (Galeria) ---
+        const fotos = [
+  'https://i.postimg.cc/bvFv1b8T/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-47-17-a288515c.jpg',
+  'https://i.postimg.cc/tgmgFPyN/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-47-17-b80f4ca2.jpg',
+  'https://i.postimg.cc/zfPfTW5k/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-54-19-7120245c.jpg',
+  'https://i.postimg.cc/yNrN09BJ/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-54-20-04aa64df.jpg',
+  'https://i.postimg.cc/XvDv9F3C/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-54-20-42bd471a.jpg',
+  'https://i.postimg.cc/dVhW6cKP/Imagem-do-Whats-App-de-2025-12-23-a(s)-21-57-46-4f1d4816.jpg',
+  'https://i.postimg.cc/0NNQ6Zgd/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-54-20-8c6fadb5.jpg',
+  'https://i.postimg.cc/pd1dK8xh/Imagem-do-Whats-App-de-2025-12-24-a(s)-07-54-20-9e443b60.jpg'
+];
+
+
+
+
+
+        // ==========================================
+        // LÓGICA (NÃO PRECISA MEXER)
+        // ==========================================
+
+        function renderContent() {
+            // Renderizar Mensagens
+            const msgBoard = document.getElementById('postItBoard');
+            msgBoard.innerHTML = '';
+            
+            mensagens.forEach(m => {
+                const div = document.createElement('div');
+                let corClass = 'bg-amarelo';
+                if(m.cor === 'rosa') corClass = 'bg-rosa';
+                if(m.cor === 'cinza') corClass = 'bg-cinza';
+                if(m.cor === 'azul') corClass = 'bg-azul';
+                if(m.cor === 'verde') corClass = 'bg-verde';
+
+                div.className = `post-it ${corClass}`;
+                div.innerHTML = `
+                    <div class="post-it-msg">${m.msg}</div>
+                    <div class="post-it-meta">
+                        <span class="post-it-author">${m.nome}</span>
+                        ${m.data}
+                    </div>
+                `;
+                msgBoard.appendChild(div);
+            });
+
+            // Renderizar Fotos
+            const photoGrid = document.getElementById('photoGallery');
+            photoGrid.innerHTML = '';
+
+            fotos.forEach(url => {
+                const div = document.createElement('div');
+                div.className = 'photo-item';
+                div.innerHTML = `<img src="${url}">`;
+                photoGrid.appendChild(div);
+            });
+        }
+
+        window.onload = renderContent;
+    </script>
+</body>
+</html>
